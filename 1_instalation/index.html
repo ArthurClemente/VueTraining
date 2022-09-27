@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Hello VUE</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+   <!-- Script to import the Vue library -->
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <!-- defer attribute makes the script to be loaded when the page is parsed -->
+   <script src="src/app.js" defer></script>
+</head>
+<body>
+   <div id="app">
+      <!-- {{ x }} "x" is the element that will be imported from the vue app -->
+      <p>O meu nome é: {{ name }}</p>
+      <p>Eu tenho {{ idade }} anos</p>
+   </div>
+</body>
+</html>
