@@ -13,9 +13,16 @@
 </head>
 <body>
    <div id="app">
+      <form id="app-form">
+         <!-- v-model directive binds the input value to the data property -->
+         <input type="text" v-model="input_name" placeholder="Type your name...">
+         <!-- v-on:click call a method from the vue app -->
+         <input type="submit" value="send" v-on:click="submitForm">
+      </form>
       <!-- {{ x }} "x" is the element that will be imported from the vue app -->
-      <p>O meu nome é: {{ name }}</p>
-      <p>Eu tenho {{ idade }} anos</p>
+      <p>Hi, my name is {{ name }}, i'm {{ age }} years old.</p>
+      <!-- input_name use data bind to load the text in real time. -->
+      <p>Hi, my name is {{ input_name }}</p>
    </div>
 </body>
 </html>
