@@ -10,8 +10,11 @@
             <li>worked in Amsterdã for three years</li>
             <li>his parter's name is Jules Winnfield</li>
          </ul>
+         <div>
+            <button @click="showNumber">{{ buttonText }}</button>
+         </div>
          <!-- v-show works similar to v-if/else, but only to render elements -->
-         <p v-show="call">His number is {{ number }}</p>
+         <p v-show="show_number">His number is {{ number }}</p>
          <!-- v-bind link an html attribute to a vueJs data -->
          <p>If you want to know more about me, visit <a v-bind:href="myLink" target="_blank">this page</a></p>
       </div>
@@ -32,9 +35,21 @@ import Picture from './Picture.vue';
       data() {
          return {
             working: true,
+            show_number: false,
             call: false,
             number: '555-555-5555',
-            myLink: 'https://pulpfiction.fandom.com/wiki/Vincent_Vega'
+            myLink: 'https://pulpfiction.fandom.com/wiki/Vincent_Vega',
+            buttonText: 'Show number'
+         }
+      },
+      methods: {
+         showNumber() {
+            this.show_number = !this.show_number;
+            if(!this.show_number) {
+               this.buttonText = 'Show number';
+            } else {
+               this.buttonText = 'Hide number';
+            }
          }
       }
    }
