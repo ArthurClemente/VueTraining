@@ -16,7 +16,7 @@
          <!-- v-show works similar to v-if/else, but only to render elements -->
          <p v-show="show_number">His number is {{ number }}</p>
          <!-- v-bind link an html attribute to a vueJs data -->
-         <p>If you want to know more about me, visit <a v-bind:href="myLink" target="_blank">this page</a></p>
+         <p class="test">If you want to know more about me, visit <a v-bind:href="myLink" target="_blank">this page</a></p>
       </div>
       <!-- Otherwise this will be displayed -->
       <p v-else>he's dead</p>
@@ -54,3 +54,9 @@ import Picture from './Picture.vue';
       }
    }
 </script>
+
+<style>
+   .superior-paragraph {
+      color: red;
+   }
+</style>
