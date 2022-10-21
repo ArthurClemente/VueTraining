@@ -4,11 +4,19 @@
       <!-- Everything in the quotes will be executed as JavaScript -->
       <div v-if="working">
          <Picture />
-         <p>he works for Marcellus Wallace</p>
+         <p>Here is some information about him:</p>
          <ul>
-            <li>he had a brother, but he was taken down by a cop</li>
-            <li>worked in Amsterdã for three years</li>
-            <li>his parter's name is Jules Winnfield</li>
+            <!-- v-for is used to render the content from an array, "v-bind:key" refferences the index of the array  -->
+            <!-- v-for repeat the tag where it is inserted -->
+            <li v-for="(information, index) in vincentInfo" :key="index">
+               {{ information }}
+            </li>
+         </ul>
+         <p>And some other things:</p>
+         <ul>
+            <li v-for="moreInfo in moreAboutVincent" :key="moreInfo.id">
+               {{ moreInfo.info }}
+            </li>
          </ul>
          <div>
             <button @click="showNumber">{{ buttonText }}</button>
@@ -39,7 +47,18 @@ import Picture from './Picture.vue';
             call: false,
             number: '555-555-5555',
             myLink: 'https://pulpfiction.fandom.com/wiki/Vincent_Vega',
-            buttonText: 'Show number'
+            buttonText: 'Show number',
+            vincentInfo: [
+               'he works for Marcellus Wallace',
+               'he had a brother, but he was taken down by a cop',
+               'worked in Amsterdã for three years',
+               'his parter\'s name is Jules Winnfield'
+            ],
+            moreAboutVincent: [
+               {id: 1, info: 'He lives in Redondo Beach'},
+               {id: 2, info: 'He owns a red 1960s era Chevrolet Malibu'},
+               {id: 3, info: 'He is called "Elvis man" by Mia Wallace'},
+            ],
          }
       },
       methods: {
