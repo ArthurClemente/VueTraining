@@ -1,6 +1,6 @@
 <template>
    <div>
-      <Header />
+      <Header :is_logged="true"/>
       <p class="superior-paragraph">{{ msg }}</p>
       <FirstComponent />
       <LifeCycle />

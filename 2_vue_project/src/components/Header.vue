@@ -3,11 +3,13 @@
       <li><a href="#">Home</a></li>
       <li><a href="#">Life</a></li>
       <li><a href="#">Death</a></li>
+      <li v-if="is_logged"><a href="#">My profile</a></li>
    </ul>
 </template>
 <script>
    export default {
-      name: 'Header'
+      name: 'Header',
+      props: ['is_logged']
    }
 </script>
 

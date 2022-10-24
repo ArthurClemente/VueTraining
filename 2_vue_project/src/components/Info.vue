@@ -40,12 +40,14 @@ import Picture from './Picture.vue';
       components: {
          Picture
       },
+      props: {
+         number: String,
+         working: Boolean,
+      },
       data() {
          return {
-            working: true,
             show_number: false,
             call: false,
-            number: '555-555-5555',
             myLink: 'https://pulpfiction.fandom.com/wiki/Vincent_Vega',
             buttonText: 'Show number',
             vincentInfo: [
